@@ -1,0 +1,46 @@
+
+<form [formGroup]="SDTableForm">
+        <fieldset>
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Data Structure</th>
+                <th>App Development</th>
+                <th>toatal Task done</th>
+                <th>Total task given</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let sd of sds">
+                <th>{{sd.id}}</th>
+                <th>{{sd.date}}</th>
+                <th>{{sd.ds}}</th>
+                <th>{{sd.appdev}}</th>
+                <th>{{sd.taskd}}</th>
+                <th>{{sd.total}}</th>
+                <th>
+                    <button (click)="deleteSD(sd.id)" (click)="DeleteSDFront(sd)">delete</button>
+                </th>
+            </tr>
+            <tr>
+                <td><input type="number" class="form-control" formControlName="id" #newMonth0/></td>
+                <td><input type="date" class="form-control" formControlName="date" #newMonth1/></td>
+                <td><input type="checkbox" value="true" class="form-control" formControlName="ds" #newMonth2/></td>
+                <td><input type="checkbox" value="true" class="form-control" formControlName="appdev" #newMonth3/></td>
+                <td><input type="number" class="form-control" formControlName="taskd" #newMonth4/></td>
+                <td><input type="number" class="form-control" formControlName="total" #newMonth5/></td>
+                
+                <td><button (click)="insertSDData()" (click)="addSD(newMonth0.value,newMonth1.value,newMonth2.value,newMonth3.value,newMonth4.value,newMonth5.value)" >Add</button></td>
+            </tr>
+            
+        </tbody>
+        </table>
+        </fieldset>
+        </form>
+        
+        
+        

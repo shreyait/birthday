@@ -1,0 +1,45 @@
+<form [formGroup]="MonthTableForm">
+    <fieldset>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Data Structure</th>
+            <th>App Development</th>
+            <th>Task 1</th>
+            <th>Task 2</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let month of months">
+            <th>{{month.id}}</th>
+            <th>{{month.date}}</th>
+            <th>{{month.ds}}</th>
+            <th>{{month.appdev}}</th>
+            <th>{{month.task1}}</th>
+            <th>{{month.task2}}</th>
+            <th>
+                <button (click)="deleteMonth(month.id)" (click)="DeleteMonthFront(month)">delete</button>
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control" formControlName="id" #newMonth0/></td>
+            <td><input type="date" class="form-control" formControlName="date" #newMonth1/></td>
+            <td><input type="text" class="form-control" formControlName="ds" #newMonth2/></td>
+            <td><input type="text" class="form-control" formControlName="appdev" #newMonth3/></td>
+            <td><input type="text" class="form-control" formControlName="task1" #newMonth4/></td>
+            <td><input type="text" class="form-control" formControlName="task2" #newMonth5/></td>
+            
+            <td><button (click)="insertMonthData()" (click)="addMonth(newMonth0.value,newMonth1.value,newMonth2.value,newMonth3.value,newMonth4.value,newMonth5.value)" >Add</button></td>
+        </tr>
+        
+    </tbody>
+    </table>
+    </fieldset>
+    </form>
+       
+    
+    

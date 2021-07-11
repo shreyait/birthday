@@ -1,0 +1,65 @@
+
+.body1{
+    background: #333;
+     margin: 0;
+    padding:0;
+    text-decoration: none;
+}
+.middle1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.card1{
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+    position: absolute;
+}
+.front1,.back1{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+.front1 img{
+    height: 100%;
+}
+.front1{
+    transform: perspective(600px) rotateY(0deg);
+}
+.back1{
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+}
+.back-content1{
+    color: #2c3e50;
+    text-align: center;
+    width: 100%;
+}
+.card1:hover > .front1{
+    transform: perspective(600px) rotateY(-180deg);
+}
+.card1:hover > .back1{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
+
+.column-label {
+    margin-right: 8px;
+    font-size: 1rem;
+}

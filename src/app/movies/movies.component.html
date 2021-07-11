@@ -1,0 +1,38 @@
+<form [formGroup]="MovieTableForm">
+    <fieldset>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Trailer</th>
+            <th>Link</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let movie of movies">
+            <th>{{movie.id}}</th>
+            <th>{{movie.name}}</th>
+            <th><a href="{{movie.trailer}}">trailer</a></th>
+            <th><a href="{{movie.link}}">{{movie.name}}</a></th>
+            <th>
+                <button (click)="deleteMovie(movie.id)" (click)="DeleteMovieFront(movie)">delete</button>
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control" formControlName="id" #newMovie0/></td>
+            <td><input type="text" class="form-control" formControlName="name" #newMovie1/></td>
+            <td><input type="text" class="form-control" formControlName="trailer" #newMovie2/></td>
+            <td><input type="text" class="form-control" formControlName="link" #newMovie3/></td>
+            <td><button (click)="insertMovieData()" (click)="addMovie(newMovie0.value,newMovie1.value,newMovie2.value,newMovie3.value)" >Add</button></td>
+        </tr>
+        
+    </tbody>
+    </table>
+    </fieldset>
+    </form>
+       
+    
+    

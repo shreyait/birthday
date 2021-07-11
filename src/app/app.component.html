@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="over" [(opened)]="opened">
+        <nav>
+        <a   [routerLink]="['home']" >Home</a>
+    </nav>
+    <nav>
+        <a  [routerLink]="['memories']" >Memories</a>
+    </nav>
+    <nav>
+        <a  [routerLink]="['movies']" >Movies</a>
+    </nav>
+    <nav>
+        <a   [routerLink]="['songs']" >Songs</a>
+    </nav>
+    <nav>
+        <a   [routerLink]="['time-table']" >Time Table</a>
+    </nav>
+    <nav>
+        <a   [routerLink]="['month']" >Month Schedule</a>
+    </nav>
+    <nav>
+        <a  [routerLink]="['graph']" >analysis</a>
+        </nav>
+    
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button (click)="opened=!opened">Neeraj Here</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+ 

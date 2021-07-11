@@ -1,0 +1,35 @@
+<form [formGroup]="SongTableForm">
+    <fieldset>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Link</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let song of songs">
+            <th>{{song.id}}</th>
+            <th>{{song.name}}</th>
+            <th><a href="{{song.link}}">{{song.name}}</a></th>
+            <th>
+                <button (click)="deleteSong(song.id)" (click)="DeleteSongFront(song)">delete</button>
+            </th>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control" formControlName="id" #newSong0/></td>
+            <td><input type="text" class="form-control" formControlName="name" #newSong1/></td>
+            <td><input type="text" class="form-control" formControlName="link" #newSong2/></td>
+            <td><button (click)="insertSongData()" (click)="addSong(newSong0.value,newSong1.value,newSong2.value)" >Add</button></td>
+        </tr>
+        
+    </tbody>
+    </table>
+    </fieldset>
+    </form>
+       
+    
+    
